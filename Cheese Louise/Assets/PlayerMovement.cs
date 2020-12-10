@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
         
+       // Debug.Log(rb.velocity);
     }
 
 
@@ -36,8 +37,6 @@ public class PlayerMovement : MonoBehaviour
     {   
         if(other.CompareTag("Pipe"))
             movement.y = Input.GetAxisRaw("Vertical");
-
-        Debug.Log(other.tag);
     }
 
     //when player is off a pipe, prevents them from climbing.
