@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pipe
   - Cheese
+  - Board
   layers:
   - Default
   - TransparentFX
