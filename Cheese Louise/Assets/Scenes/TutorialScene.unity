@@ -253,7 +253,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 0.8
+  orthographic size: 1.47
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -277,8 +277,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260891069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.91, y: -2.77, z: -10}
-  m_LocalScale: {x: 1.125, y: 0.7375, z: 1}
+  m_LocalPosition: {x: 2.35, y: -2.07, z: -10}
+  m_LocalScale: {x: 1.125, y: 1.4289063, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -364,6 +364,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CheeseForMouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670724867528068254, guid: 5e196968b644b6a4e81a6a2bfe04db8f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cheese
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e196968b644b6a4e81a6a2bfe04db8f, type: 3}
@@ -821,6 +826,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pipe Med
       objectReference: {fileID: 0}
+    - target: {fileID: 6610622337927226650, guid: 645bfb04171fd2f4bbbf42da4ce80ae4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pipe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 645bfb04171fd2f4bbbf42da4ce80ae4, type: 3}
 --- !u!1 &1760338663
@@ -858,13 +868,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.5
-  m_GravityScale: 5
+  m_AngularDrag: 0
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1760338665
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -942,8 +952,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.25, y: 0.13}
+  m_Offset: {x: 0, y: -0.01}
+  m_Size: {x: 0.13, y: 0.05}
   m_Direction: 1
 --- !u!114 &1760338668
 MonoBehaviour:
@@ -957,8 +967,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320a7517089984a40a2989a30478300b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 2
+  _moveSpeed: 1.5
   rb: {fileID: 1760338664}
+  animator: {fileID: 1760338669}
 --- !u!95 &1760338669
 Animator:
   serializedVersion: 3
@@ -1213,6 +1224,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mouse Hole
       objectReference: {fileID: 0}
+    - target: {fileID: 1487709562413577733, guid: e19126a17dc84a948955da7b0bf3f7e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 5250098452798841266, guid: e19126a17dc84a948955da7b0bf3f7e6,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1296,6 +1312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pipe Reg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954864188569122183, guid: 56d5f6006fb503f4c9d7b9e82979c6c8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pipe
       objectReference: {fileID: 0}
     - target: {fileID: 8535927765054468259, guid: 56d5f6006fb503f4c9d7b9e82979c6c8,
         type: 3}
