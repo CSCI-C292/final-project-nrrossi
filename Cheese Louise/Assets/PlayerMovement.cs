@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    public bool movementAllowed = true;
+
     void Update() 
     {
         //Gets movements inputs in x-axis
@@ -27,8 +29,11 @@ public class PlayerMovement : MonoBehaviour
 
 
     void FixedUpdate() 
-    {   //Moves the character
-        rb.MovePosition(rb.position + movement * _moveSpeed * Time.fixedDeltaTime);
+    {   
+        if(movementAllowed){
+            //Moves the character
+            rb.MovePosition(rb.position + movement * _moveSpeed * Time.fixedDeltaTime);
+        }
     }
 
 
@@ -43,6 +48,17 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) 
     {
         movement.y = 0;
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("Finish")){
+            Debug.Log("hole");
+        }
+    }
+
+    public void movementToggle(){
+        movementAllowed = !movementAllowed;
     }
 
 }
