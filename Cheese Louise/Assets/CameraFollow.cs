@@ -18,19 +18,31 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //prevent camera from boundary. Shouldn't have to worry about the top.
+        //prevent camera from boundary.
 
         //Bottom Left Case
         if(target.position.x < xMin && target.position.y < yMin){
             transform.position = new Vector3(xMin, yMin, -10);
         }
+        //Top Left Case
+       else if(target.position.x < xMin && target.position.y > yMax){
+            transform.position = new Vector3(xMin, yMax, -10);
+        }
         //Bottom Right Case
        else if(target.position.x > xMax && target.position.y < yMin){
             transform.position = new Vector3(xMax, yMin, -10);
         }
+        //Top Right Case
+       else if(target.position.x > xMax && target.position.y > yMax){
+            transform.position = new Vector3(xMax, yMax, -10);
+        }
         //Bottom Case
         else if(target.position.y < yMin){
             transform.position = new Vector3(target.position.x, yMin, -10);
+        }
+        //Top Case
+        else if(target.position.y > yMax){
+            transform.position = new Vector3(target.position.x, yMax, -10);
         }
         //Left Case{
         else if(target.position.x < xMin){
