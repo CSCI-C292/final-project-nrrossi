@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         /*    //Falling Speed  
             if((movement.y == 0) || (rb.position.Equals(transform.position))){
                 rb.AddForce(new Vector2(0, -1) * _downSpeed);
-        */   }
+            } */
     }
 
 
