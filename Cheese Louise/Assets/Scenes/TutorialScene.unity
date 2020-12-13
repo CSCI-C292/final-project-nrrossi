@@ -1038,7 +1038,7 @@ PrefabInstance:
     - target: {fileID: 5085975903983359579, guid: d8ac6fbc2733c47478edd50ff839f59e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7373009437807173850, guid: d8ac6fbc2733c47478edd50ff839f59e,
         type: 3}
@@ -1610,6 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 1.5
+  _downSpeed: 100
   rb: {fileID: 1760338664}
   animator: {fileID: 1760338669}
   movementAllowed: 1
@@ -1804,6 +1805,7 @@ MonoBehaviour:
   findCheeseFirst: {fileID: 832633973}
   proceed: {fileID: 1419748343}
   cheese: {fileID: 1760338670}
+  playerMovement: {fileID: 1760338668}
 --- !u!1001 &5152524057927654688
 PrefabInstance:
   m_ObjectHideFlags: 0
