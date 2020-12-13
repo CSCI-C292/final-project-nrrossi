@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+    ////////////////////////////////////////////////////////////////
+    //
+    //  Variables
+    //
     [SerializeField] float _moveSpeed = 5f;
-
+    [SerializeField] float _downSpeed = 1f;
     public Rigidbody2D rb;
     public Animator animator;
 
@@ -14,6 +18,16 @@ public class PlayerMovement : MonoBehaviour
 
     public bool movementAllowed = true;
 
+    private MouseHole mouseHole;
+    private void Start() {
+        mouseHole = FindObjectOfType<MouseHole>();
+    }
+
+
+    /////////////////////////////////////////////////////////////////////////
+    //
+    //  Updating movement on X-axis and Animator
+    //
     void Update() 
     {
         //Gets movements inputs in x-axis
@@ -27,6 +41,10 @@ public class PlayerMovement : MonoBehaviour
        // Debug.Log(rb.velocity);
     }
 
+    ///////////////////////////////////////////////////////
+    //
+    //  Moving the character and adding falling force
+    //
 
     void FixedUpdate() 
     {   
@@ -34,31 +52,64 @@ public class PlayerMovement : MonoBehaviour
             //Moves the character
             rb.MovePosition(rb.position + movement * _moveSpeed * Time.fixedDeltaTime);
         }
+
+        /*    //Falling Speed  
+            if((movement.y == 0) || (rb.position.Equals(transform.position))){
+                rb.AddForce(new Vector2(0, -1) * _downSpeed);
+        */   }
     }
 
 
+
+
+
+
+
+
+
+    /////////////////////////////////////////////////////
     //When player in on a pipe, allows them to climb it
+    //
     private void OnTriggerStay2D(Collider2D other) 
     {   
         if(other.CompareTag("Pipe"))
             movement.y = Input.GetAxisRaw("Vertical");
     }
 
+    ///////////////////////////////////////////////////////////
     //when player is off a pipe, prevents them from climbing.
+    //
     private void OnTriggerExit2D(Collider2D other) 
     {
         movement.y = 0;
     }
 
 
+
+
+
+
+
+
+    ////////////////////////////////////////////////////////
+    //  Detects when mouse reaches the hole
+    //
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Finish")){
-            Debug.Log("hole");
+            mouseHole.mouseExit();
         }
     }
 
-    public void movementToggle(){
-        movementAllowed = !movementAllowed;
-    }
 
+
+
+
+
+
+    ///////////////////////////////////////////////
+    //  Toggle Movement Capability
+    //
+    public void movementToggle(bool choice){
+        movementAllowed = choice;
+    }
 }

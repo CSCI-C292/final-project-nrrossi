@@ -5,35 +5,34 @@ using UnityEngine.UI;
 
 public class MouseHole : MonoBehaviour
 {
-
-    [SerializeField] GameObject player;
-
     public Text levelComplete;
     public Text findCheeseFirst;
+    public Text proceed;
+
+    public Cheese cheese;
+    public PlayerMovement playerMovement;
+    
+    private float count = 0;
 
 private void Awake() {
         levelComplete.gameObject.SetActive(false);
         findCheeseFirst.gameObject.SetActive(false);
-       // player = GameObject.Find("Player");
+        proceed.gameObject.SetActive(false);
+
         
 }
     public void mouseExit()
     {
-        if(true == true){
-            Debug.Log("Works");
+        if(cheese.hasCheese() == true){
+            levelComplete.gameObject.SetActive(true);
+            proceed.gameObject.SetActive(true);
+            findCheeseFirst.gameObject.SetActive(false);
+            playerMovement.movementToggle(false);
+            //Advance to next level after enter is hit
 
         }
         else {
-                Debug.Log("No Cheese");
-        }
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D other) {   
-        if(other.CompareTag("Finish")){
-            Debug.Log("At Hole");
-            mouseExit();
-
+            findCheeseFirst.gameObject.SetActive(true);
         }
     }
 
