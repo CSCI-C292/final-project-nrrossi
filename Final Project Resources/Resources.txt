@@ -12,7 +12,11 @@ Pipe2 - http://gameartpartners.com/downloads/underground-sewer-line-background/
 pipe3 - Made by me
 
 Main Menu Background - https://wallup.net/blue-gradient-simple-wallhaven/
+Main Menu Font - https://www.1001fonts.com/baveuse-font.html
 
 Coding Resources:
 Animation and movement - https://www.youtube.com/watch?v=whzomFgjT50&t=1091s (Linked to me by Tianning Zhu)
 Camera Following Player - https://www.youtube.com/watch?v=_QnPY6hw8pA (only for referal.)
+Menu - https://www.youtube.com/watch?v=zc8ac_qUXQY
+
+
