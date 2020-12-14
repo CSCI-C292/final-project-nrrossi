@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameState : MonoBehaviour
 {
 
     public MouseHole mouseHole;
+
+    public Text demoThanks;
+    public Text proceed;
 
 
     private void FixedUpdate() {
@@ -24,6 +28,11 @@ public class GameState : MonoBehaviour
         if (Input.GetButtonDown("Submit") && mouseHole.gameComplete){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         mouseHole.gameComplete = false;
+        }
+
+        if((SceneManager.GetActiveScene().buildIndex == 2) && mouseHole.gameComplete){
+            demoThanks.gameObject.SetActive(true);
+            proceed.gameObject.SetActive(false);
         }
     }
 

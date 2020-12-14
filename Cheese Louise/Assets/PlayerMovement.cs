@@ -57,6 +57,8 @@ public class PlayerMovement : MonoBehaviour
             if((movement.y == 0) || (rb.position.Equals(transform.position))){
                 rb.AddForce(new Vector2(0, -1) * _downSpeed);
             } */
+
+            if(rb.velocity.y < 0){Debug.Log("velocity is" + rb.velocity.y);}
     }
 
 
