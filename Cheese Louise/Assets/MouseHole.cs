@@ -26,7 +26,6 @@ private void Awake() {
         if(cheese.hasCheese() == true){
             levelComplete.gameObject.SetActive(true);
             proceed.gameObject.SetActive(true);
-            findCheeseFirst.gameObject.SetActive(false);
             playerMovement.movementToggle(false);
             
             //Advance to next level after enter is hit

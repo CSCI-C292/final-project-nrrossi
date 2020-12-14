@@ -9,6 +9,8 @@ public class Cheese : MonoBehaviour
 
     private bool playerHasCheese = false;
     public GameObject cheeseForMouse; 
+
+    public Text findCheeseFirst;
     public Image cheeseIcon;
 
 
@@ -25,6 +27,7 @@ public class Cheese : MonoBehaviour
         playerHasCheese = true;     //Sets Boolean to true
         cheeseIcon.gameObject.SetActive(true);  //Enables Cheese Icon
         cheeseForMouse.SetActive(false);    //Disables Cheese On Map
+        findCheeseFirst.gameObject.SetActive(false);    //Sets text to false when picking up cheese.
     }
 
 
